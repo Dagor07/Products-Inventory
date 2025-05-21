@@ -1,5 +1,12 @@
+import time 
 import os #Clears the console when running
 os.system("cls" if os.name == "nt" else "clear")
+
+def print_late(text, delay=0.1):
+    for letter in text:
+        print(letter, end='', flush=True)
+        time.sleep(delay)
+    print()
 
 # System inventory management
 Inventary = [] # Initial product list
@@ -104,7 +111,7 @@ def main(): #Function to run the code
         elif option == "6":
             show_inventory()
         elif option == "7":
-            print("Leaving the program. See you later.!")
+            print_late("Leaving the program. See you later ...")
             break
         else:
             print("Invalid option. Please select a number from 1 to 7.")
